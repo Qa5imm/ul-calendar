@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: black;
+  }
+
+  .lightning {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  .bolt {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 30px 0;
+    border-color: transparent transparent #fff transparent;
+    transform-origin: bottom left;
+  }
+
+  .bolt:nth-child(1) {
+    top: 50px;
+    left: 30px;
+    transform: rotate(45deg);
+  }
+
+  .bolt:nth-child(2) {
+    top: 30px;
+    left: 90px;
+    transform: rotate(-45deg);
+  }
+
+  .bolt:nth-child(3) {
+    top: 80px;
+    left: 150px;
+    transform: rotate(45deg);
+  }
+
+  .bolt:nth-child(4) {
+    top: 110px;
+    left: 10px;
+    transform: rotate(-45deg);
+  }
+</style>
+</head>
+<body>
+  <div class="lightning">
+    <div class="bolt"></div>
+    <div class="bolt"></div>
+    <div class="bolt"></div>
+    <div class="bolt"></div>
+  </div>
+</body>
+</html>

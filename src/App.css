@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: grid;
+  /* background: #000; */
+}
+.board {
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.square {
+  color: red;
+  /*   box-shadow: 0 1px, 0 2px, 0 3px, 0 4px, 0 5px, 0 -1px green, 0 -2px green,
+    0 -3px green, 0 -4px green, 0 -5px green, 1px 0 blue, 2px 0 blue, 3px 0 blue, 4px 0 blue, 5px 0 blue, -1px 0 yellow, -2px 0 yellow, -3px 0 yellow, -4px 0 yellow, -5px 0 yellow; */
+}
+.square:nth-child(even) {
+  background: black;
+  animation-delay: 0s;
+}
+.square:nth-child(odd) {
+  background: gold;
+  z-index: 1;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.square:nth-child(5n + 1) {
+  animation: rotate linear 2s infinite;
+}
+.square:nth-child(5n + 2) {
+  animation: rotate linear 2s infinite;
+  animation-delay: 0s;
+}
+.square:nth-child(5n + 3) {
+  animation: rotate linear 2s infinite;
+  animation-delay: 0s;
+}
+.square:nth-child(5n + 4) {
+  animation: rotate linear 2s infinite;
+  animation-delay: 0s;
+}
+.square:nth-child(5n + 5) {
+  animation: rotate linear 2s infinite;
+  animation-delay: 0s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes rotate {
+  10% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
