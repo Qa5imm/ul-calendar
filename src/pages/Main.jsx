@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Month from "../components/Month";
 import Header from "../components/Header";
 import Shaskay from "../components/Shaskay";
-import { render } from "@testing-library/react";
 
 const Main = () => {
   const [text, setText] = useState("shashkay");
