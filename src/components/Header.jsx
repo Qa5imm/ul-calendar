@@ -7,11 +7,11 @@ const Header = () => {
   };
   return (
     <div className="m-8">
-      <h1 className="text-4xl font-bold text-yellow-500 w-100vw text-center ">
+      <h1 className="text-4xl font-bold w-100vw text-center ">
         Ultimate Prep Calendar
       </h1>
       {Object.entries(banday).map(([k, v]) => (
-        <div className="flex gap-x-4 m-3 text-white">
+        <div className="flex gap-x-4 m-3 ">
           <p>{k}</p>
           <div className={`border h-6 w-24 ${v}`}></div>
         </div>

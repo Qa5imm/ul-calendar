@@ -17,12 +17,12 @@ const Month = ({ month, days }) => {
     "paisay poray, baat khatam": 8,
   };
   return (
-    <div key={month} className="p-4">
-      <h1 className="text-white m-4 text-3xl font-semibold w-100vw text-center">
+    <div key={month} className="border-4 border-black  m-6 p-4">
+      <h1 className="m-4 text-3xl font-semibold w-100vw text-center">
         {month}
       </h1>
 
-      <div className="grid grid-cols-5 gap-1 text-gray-200">
+      <div className="grid grid-cols-5 gap-1 ">
         {Array.from({ length: days }, (_, i) => {
           let color = "";
           // current date
