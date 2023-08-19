@@ -22,7 +22,7 @@ const Main = () => {
   };
 
   return (
-    <div className="w-100vw bg-black">
+    <div className="w-100vw">
       <button
         className=" p-2 border-2 border-yellow-500 bg-white text-black m-4 mb-0 rounded-lg "
         onClick={() => {
