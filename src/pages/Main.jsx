@@ -19,7 +19,7 @@ const Main = () => {
   };
 
   return (
-    <div className="p-12">
+    <div className="p-3 md:p-12">
       <Header />
       {Object.entries(month).map(([k, v]) => {
         return <Month month={k} days={v} />;

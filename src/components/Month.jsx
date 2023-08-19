@@ -48,7 +48,7 @@ const Month = ({ month, days }) => {
           }
 
           return (
-            <span key={i} className={`border p-2  ${color}`} c>
+            <span key={i} className={`border p-2  ${color}  text-center `} >
               {i + 1}
             </span>
           );
