@@ -1,20 +1,29 @@
 import React from "react";
 
-const Month = ({ month, days }) => {
+const Month = ({ month, color }) => {
+  // console.log("given ", color);
+  let todaysColor = "";
   const mapper = {
-    August: 8,
-    September: 9,
-    October: 10,
-    November: 11,
-    December: 12,
-    Janunary: 1,
-    Feburary: 2,
-    March: 3,
-    April: 4,
-    May: 5,
-    June: 6,
-    July: 7,
-    "paisay poray, baat khatam": 8,
+    August: 31,
+    September: 30,
+    October: 31,
+    November: 30,
+    December: 31,
+    Janunary: 30,
+    Feburary: 29,
+    March: 31,
+    April: 30,
+    May: 31,
+    June: 30,
+    July: 31,
+    "paisay poray, baat khatam": 31,
+  };
+  const colorChanger = () => {
+    if (color === "blue") {
+      color = "purple";
+    } else {
+      color = "blue";
+    }
   };
   return (
     <div key={month} className="border-4 border-black  m-6 p-4">
@@ -23,32 +32,46 @@ const Month = ({ month, days }) => {
       </h1>
 
       <div className="grid grid-cols-5 gap-1 ">
-        {Array.from({ length: days }, (_, i) => {
-          let color = "";
+        {Array.from({ length: mapper[month] }, (_, i) => {
           // current date
           let today = new Date();
-          if (
-            today.getMonth() + 1 === mapper[month] &&
-            today.getDate() - 1 === i
-          ) {
-            color = "bg-yellow-500";
+          let currMonth = today.toLocaleString("default", {
+            month: "long",
+          });
+
+          if (currMonth === month && today.getDate() - 1 === i) {
+            todaysColor = "bg-yellow-500";
+            colorChanger();
           } else {
+            //  in case todaysColor was resetting it to make condition in tailwind false
+            if (todaysColor) {
+              todaysColor = "";
+            }
             if (month === "August") {
+              // to make aug white before 12
               if (i >= 11) {
-                //index start at 0
-                color = i % 2 === 0 ? "bg-blue-700" : "bg-purple-700";
+                colorChanger();
+              } else {
+                color = "";
               }
             } else if (month === "paisay poray, baat khatam") {
+              // to make last month white after 12
               if (i <= 11) {
-                color = i % 2 === 0 ? "bg-blue-700" : "bg-purple-700";
+                colorChanger();
+              } else {
+                color = "";
               }
             } else {
-              color = i % 2 === 0 ? "bg-blue-700" : "bg-purple-700";
+              colorChanger();
             }
           }
-
           return (
-            <span key={i} className={`border p-2  ${color}  text-center `} >
+            <span
+              key={i}
+              className={`border p-2  ${
+                todaysColor ? todaysColor : `bg-${color}-700`
+              }  text-center `}
+            >
               {i + 1}
             </span>
           );

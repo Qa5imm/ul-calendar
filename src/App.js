@@ -1,10 +1,10 @@
 import './App.css';
-import Main from './pages/Main';
+import Calendar from './pages/Calendar';
 
 function App() {
   return (
     <div className="App h-screen">
-      <Main></Main>
+      <Calendar/>
     </div>
   );
 }
