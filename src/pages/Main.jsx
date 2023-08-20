@@ -9,7 +9,7 @@ const Main = () => {
     November: 30,
     December: 31,
     Janunary: 30,
-    Feburary: 28,
+    Feburary: 29,
     March: 31,
     April: 30,
     May: 31,
